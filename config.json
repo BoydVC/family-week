@@ -1,0 +1,164 @@
+{
+  "port": 4847,
+  "tz": "America/New_York",
+  "calendarFile": "data/calendar.json",
+  "weather": {
+    "wallApi": "http://127.0.0.1:4848/api/wall",
+    "wallCache": "/workspace/tokenmax/parenta-wall/data/cache/openmeteo.json",
+    "location": "Hometown, MD"
+  },
+  "people": [
+    {
+      "key": "kidb",
+      "name": "Kid B",
+      "full": "Kid B · 8th grade",
+      "color": "#f472b6"
+    },
+    {
+      "key": "kida",
+      "name": "Kid A",
+      "full": "Kid A · 6th grade",
+      "color": "#5eead4"
+    },
+    {
+      "key": "parenta",
+      "name": "Parent A",
+      "full": "Parent A",
+      "color": "#4ade80"
+    },
+    {
+      "key": "randi",
+      "name": "Randi",
+      "full": "Parent B",
+      "color": "#a78bfa"
+    },
+    {
+      "key": "family",
+      "name": "Family",
+      "full": "Everyone",
+      "color": "#60a5fa"
+    }
+  ],
+  "lanes": {
+    "byCalendar": {
+      "alpha": "kida",
+      "club": "kidb",
+      "integrity": "kidb",
+      "work": "parenta",
+      "holidays": "family",
+      "ravens": "family",
+      "family_events": "family",
+      "family": "family",
+      "primary": "parenta"
+    },
+    "byTitlePrefix": [
+      [
+        "Bravo 11u",
+        "kida",
+        "Bravo 11u Blue baseball"
+      ],
+      [
+        "Team Alpha",
+        "kida",
+        "Team Alpha 12U soccer"
+      ],
+      [
+        "Delta 2031",
+        "kidb",
+        "Delta 2031 Green lacrosse is Kid B's (per a parent's Delta/Club conflict report)"
+      ]
+    ],
+    "byTitleWord": [
+      [
+        "Kid A",
+        "kida"
+      ],
+      [
+        "Kid A",
+        "kida"
+      ],
+      [
+        "Kid B",
+        "kidb"
+      ],
+      [
+        "Kid B",
+        "kidb"
+      ],
+      [
+        "Parent A",
+        "parenta"
+      ],
+      [
+        "Randi",
+        "randi"
+      ],
+      [
+        "Parent B",
+        "randi"
+      ],
+      [
+        "HSPT",
+        "kidb",
+        "HSPT is the 8th-grade high-school placement test, so it goes in Kid B's lane (inferred)"
+      ]
+    ],
+    "ownerWordsOnlyOn": [
+      "family_events",
+      "family",
+      "primary"
+    ]
+  },
+  "kids": [
+    "kidb",
+    "kida"
+  ],
+  "driveRules": [
+    {
+      "id": "kida-practice",
+      "person": "kida",
+      "match": "practice",
+      "drop": "Carpool",
+      "pickup": "Family",
+      "why": "Kid A carpools to API & Alpha practices; the Family always pick up"
+    },
+    {
+      "id": "kidb-club-tue",
+      "person": "kidb",
+      "calendar": "club",
+      "match": "practice",
+      "weekday": 1,
+      "drop": "Carpool",
+      "pickup": null,
+      "why": "Tuesdays Kid B carpools to Club"
+    },
+    {
+      "id": "kidb-club-thu",
+      "person": "kidb",
+      "calendar": "club",
+      "match": "practice",
+      "weekday": 3,
+      "drop": "Family",
+      "pickup": null,
+      "why": "Thursdays the Family drive Kid B to Club at Venue 1, Hometown"
+    }
+  ],
+  "unassignedLabel": "needs a driver?",
+  "conflictWindowMin": 30,
+  "gameBufferMin": 45,
+  "awayPattern": "(?i)(conference|trip|travel|\\(([A-Z][a-z]+)\\))",
+  "tv": [
+    "ravens"
+  ],
+  "calendarIds": {
+    "calendar-1@example.com": "family",
+    "calendar-2@example.com": "family_events",
+    "calendar-3@example.com": "teams",
+    "parent.a@example.com": "primary",
+    "calendar-4@example.com": "alpha",
+    "calendar-5@example.com": "club",
+    "calendar-6@example.com": "work",
+    "calendar-7@example.com": "integrity",
+    "en.usa#holiday@group.v.calendar.google.com": "holidays"
+  }
+}
